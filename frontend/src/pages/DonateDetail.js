@@ -4,6 +4,7 @@ import { ethers } from "ethers";
 import theme from "../theme";
 import projects from "../data/projects";
 
+
 function DonateDetail() {
   const [showHistory, setShowHistory] = useState(false);
   const [hoveredImg, setHoveredImg] = useState(false);

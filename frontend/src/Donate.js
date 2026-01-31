@@ -12,7 +12,7 @@ function Donate() {
   return (
     <div style={{ maxWidth: 600, margin: "40px auto", color: "#fff" }}>
       <h2 style={{ textAlign: "center", marginBottom: 32, color: "#ffd600" }}>Danh sách dự án từ thiện</h2>
-      {projects.map(project => (
+      {projects.filter(project => project.status === "active").map(project => (
         <div key={project.id} style={{ display: "flex", alignItems: "flex-start", border: "1px solid #ddd", borderRadius: 12, padding: 20, marginBottom: 24, background: "rgba(255,255,255,0.08)", boxShadow: "0 2px 8px 0 rgba(25, 118, 210, 0.04)", color: "#fff" }}>
           <img
             src={project.image}

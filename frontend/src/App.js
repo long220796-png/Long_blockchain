@@ -1,9 +1,11 @@
-	import React from "react";
+import React from "react";
 	import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 	import Donate from "./Donate";
 	import DonateDetail from "./pages/DonateDetail";
 	import About from "./pages/About.jsx";
 	import Contact from "./pages/Contact.jsx";
+	import Guide from "./pages/Guide.jsx";
+	import CompletedProjects from "./pages/CompletedProjects.jsx";
 	// Đã xóa History.jsx
 	import theme from "./theme";
 	import Footer from "./components/Footer";
@@ -47,7 +49,7 @@ function NavLinkItem({ to, children }) {
 function App() {
 	return (
 		<Router>
-			<div style={{ minHeight: "100vh", background: theme.colors.background, color: theme.colors.text, paddingBottom: 0 }}>
+			<div style={{ minHeight: "100vh", width: "100vw", background: theme.colors.background, color: theme.colors.text, paddingBottom: 0 }}>
 				<nav style={{
 					width: "100vw",
 					display: "flex",
@@ -65,6 +67,8 @@ function App() {
 					<NavLinkItem to="/">Trang chủ</NavLinkItem>
 					<NavLinkItem to="/about">Về chúng tôi</NavLinkItem>
 					<NavLinkItem to="/contact">Liên hệ</NavLinkItem>
+					<NavLinkItem to="/guide">Hướng dẫn</NavLinkItem>
+					<NavLinkItem to="/completed">Dự án đã hoàn thành</NavLinkItem>
 				</nav>
 				<Routes>
 					<Route path="/" element={<Donate />} />
@@ -72,6 +76,9 @@ function App() {
 					{/* Đã xóa route lịch sử giao dịch */}
 					<Route path="/about" element={<About />} />
 					<Route path="/contact" element={<Contact />} />
+					<Route path="/guide" element={<Guide />} />
+					<Route path="/projects" element={<CompletedProjects />} />
+					<Route path="/completed" element={<CompletedProjects />} />
 				</Routes>
 			</div>
 			<Footer />
